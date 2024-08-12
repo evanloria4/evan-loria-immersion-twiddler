@@ -7,7 +7,7 @@ $(document).ready(() => {
   // Prepend the div tag to the document
   $('body').append($divToPrepend);
   function createTweet(array){
-
+    $body.html('');
     // Maps over the array containing the tweets 
   const $tweets = array.map((tweet) => {
     // Create a div tag for tweets
@@ -29,7 +29,6 @@ $(document).ready(() => {
         const $elapsedTimestamp = moment(tweet.created_at).startOf(tweet.created_at).fromNow();
         $dateTimestamp.append(' ' + $elapsedTimestamp);
     // Append the $user, $tweetMessage, and timestamp to the originally created div
-      if (!streams.home.includes(`${tweet.message}`))
         $tweet.append($user).append($tweetMessage).append($dateTimestamp)
     
 
