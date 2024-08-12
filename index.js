@@ -28,10 +28,11 @@ $(document).ready(() => {
         const $dateTimestamp = $('<div id=timestamp></div>').text(moment(tweet.created_at).format('MMMM Do YYYY, h:mm a'));
         const $elapsedTimestamp = moment(tweet.created_at).startOf(tweet.created_at).fromNow();
         $dateTimestamp.append(' ' + $elapsedTimestamp);
+    // Append the $user, $tweetMessage, and timestamp to the originally created div
+      if (!streams.home.includes(`${tweet.message}`))
         $tweet.append($user).append($tweetMessage).append($dateTimestamp)
-     // }
     
-    // } // Append the $user, $tweetMessage, and timestamp to the originally created div
+
       // When the $user is clicked
       // Invoke create tweet on the array of streams.users[<clicked on user>]
     $user.on('click', function(){ 
