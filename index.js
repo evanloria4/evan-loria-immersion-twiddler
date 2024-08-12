@@ -1,13 +1,12 @@
 
 $(document).ready(() => {
   const $body = $('body'); // <> not used when tag already exists
-  $body.html('');
+  function createTweet(array){
+    $body.html('');
   // Create a div tag
   const $divToPrepend = $('<div id=main></div>'); // <> are used when creating a tag
   // Prepend the div tag to the document
   $('body').append($divToPrepend);
-  function createTweet(array){
-    $body.html('');
     // Maps over the array containing the tweets 
   const $tweets = array.map((tweet) => {
     // Create a div tag for tweets
