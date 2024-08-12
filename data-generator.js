@@ -17,6 +17,7 @@ const users = Object.keys(streams.users);
 
 // Utility function for adding tweets to our data structures
 const addTweet = (newTweet) => {
+  
   const username = newTweet.user;
   streams.users[username].push(newTweet);
   streams.home.push(newTweet);
@@ -69,7 +70,7 @@ scheduleNextTweet();
 // (NOTE: Not used by the rest of this file.)
 const writeTweet = (message) => {
   const visitor = window.visitor;
-
+  
   if (!visitor){
     throw new Error('Set the global visitor property!');
   }
